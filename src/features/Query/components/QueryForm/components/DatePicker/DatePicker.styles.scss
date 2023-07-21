@@ -1,0 +1,14 @@
+@import '../../../../../../assets/styles/vars/colors.scss';
+@import '../../../../../../assets/styles/vars/sizes.scss';
+
+.empty-datepicker{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: $primary-color;
+    min-width: $form-item-min-width;
+    height: $form-item-height;
+    color: white;
+    svg {color: white;}
+}

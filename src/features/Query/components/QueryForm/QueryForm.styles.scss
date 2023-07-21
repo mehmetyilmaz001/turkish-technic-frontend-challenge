@@ -1,0 +1,12 @@
+@import '../../../../assets/styles/vars/colors.scss';
+
+.query-form{
+    background-color: $panel-bg-color;
+    padding: 20px;
+    display: flex;
+    gap: 8px;
+
+    .ant-form-item{
+        margin-bottom: 0;
+    }
+}

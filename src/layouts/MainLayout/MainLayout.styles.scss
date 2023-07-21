@@ -42,10 +42,15 @@
                 border-bottom-color: $dark-border-color;
             } 
         }
+
+        h1 {
+            font-weight: normal;
+        }
     }
 
     article{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 20px;

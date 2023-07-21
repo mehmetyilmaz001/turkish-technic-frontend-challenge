@@ -15,14 +15,14 @@ function App() {
   });
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  React.useLayoutEffect(() => history.listen(setState),[history])
+  React.useLayoutEffect(() => history.listen(setState), [history])
 
   return (
-    <ConfigProvider theme={{ token: { colorPrimary: '#374151' } }} locale={locale}>
-      <Router basename="/" 
-      navigator={history} 
-      location={state.location} 
-      navigationType={state.action}
+    <ConfigProvider theme={{ token: { colorPrimary: '#d32e34', borderRadius: 0 } }} locale={locale}>
+      <Router basename="/"
+        navigator={history}
+        location={state.location}
+        navigationType={state.action}
       >
         <Routes>
           <Route index element={<Query />} />
