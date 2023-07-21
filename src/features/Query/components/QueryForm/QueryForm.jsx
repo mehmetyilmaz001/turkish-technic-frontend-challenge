@@ -9,12 +9,10 @@ import DatePicker from './components/DatePicker/DatePicker';
 
 import './QueryForm.styles.scss';
 
-export default function QueryForm() {
+export default function QueryForm({onFinish}) {
     const [form] = Form.useForm();
     const [submittable, setSubmittable] = useState(false);
-    const onFinish = (values) => {
-        console.log("finish values..", values);
-    };
+    
     // Watch all values
     const values = Form.useWatch([], form);
 

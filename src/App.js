@@ -6,6 +6,7 @@ import locale from 'antd/es/locale/en_US';
 import history from './utils/history';
 
 import './assets/styles/app.scss';
+import { PATHS } from './constants';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
       >
         <Routes>
           <Route index element={<Query />} />
-          <Route path="list" element={<List />} />
+          <Route path={PATHS.LIST} element={<List />} />
         </Routes>
       </Router>
     </ConfigProvider>
