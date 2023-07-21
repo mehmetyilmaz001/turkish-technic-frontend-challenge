@@ -1,9 +1,53 @@
+@import '../../assets/styles/vars/colors.scss';
+
 .main-layout{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    height: 100%;
+    background-color: $bg-color;
 
     &.dark{
-        background-color: black;
+        background-color: $dark-bg-color;
+
+        header{
+            border-bottom-color: $dark-border-color;
+            
+            .branding a{
+                color: $dark-text-color;
+            }
+
+            h1{
+                color: $dark-text-color;
+                font-size: 20px;
+            }
+        }
+
+        article{
+            color: $dark-text-color;
+        }
+
+
+    }
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 20px 20px 0 20px;
+        border-bottom: solid 2px;
+        border-bottom-color: $border-color;
+
+        .branding{
+            &.dark{
+                border-bottom-color: $dark-border-color;
+            } 
+        }
+    }
+
+    article{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
     }
 }
