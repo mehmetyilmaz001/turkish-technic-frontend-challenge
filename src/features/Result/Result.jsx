@@ -18,13 +18,13 @@ export default function Result(){
     return (
         <MainLayout className="result-page">
 
-            <Alert type={hasFailed ? ALERT_TYPE.FAIL : ALERT_TYPE.SUCCESS} message={`Kabin seçiminiz ${hasFailed ? 'tamamlanamadi' : 'tamamlandı'}.`} 
+            <Alert type={hasFailed || !resultData ? ALERT_TYPE.FAIL : ALERT_TYPE.SUCCESS} message={`Kabin seçiminiz ${hasFailed ? 'tamamlanamadi' : 'tamamlandı'}.`} 
                 buttonProps={{
                     onClick:() => history.push(PATHS.QUERY),
                     label: "Başa Dön"
                 }} />
             
-            {!hasFailed && 
+            {!hasFailed && resultData && 
                     <div className="total-amount">
                         <span className="title">Toplam tutar</span>
                         <span className="amount">

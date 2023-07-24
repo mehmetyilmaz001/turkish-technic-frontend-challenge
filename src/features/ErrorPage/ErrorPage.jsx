@@ -1,16 +1,15 @@
-import { useRouteError } from "react-router-dom";
+import MainLayout from "../../layouts/MainLayout/MainLayout";
+import Alert, { ALERT_TYPE } from "../../components/Alert/Alert";
+import history from "../../utils/history";
+import { PATHS } from "../../constants";
 
 export default function ErrorPage() {
-  const error = useRouteError();
-  console.error(error);
-
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
-    </div>
+    <MainLayout>
+      <Alert type={ALERT_TYPE.FAIL} message="404 Sayfa Bulunamadı!" buttonProps={{
+        onClick: () => history.push(PATHS.QUERY), 
+        label: "Başa Dön",
+      }} />
+    </MainLayout>
   );
 }

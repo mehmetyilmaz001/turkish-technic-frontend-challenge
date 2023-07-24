@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Routes, Route } from "react-router-dom";
 import { ConfigProvider } from 'antd';
-import { Query, List, Result } from './features';
+import { Query, List, Result, ErrorPage } from './features';
 import locale from 'antd/es/locale/en_US';
 import history from './utils/history';
 import { PATHS } from './constants';
@@ -29,6 +29,7 @@ function App() {
           <Route index element={<Query />} />
           <Route path={PATHS.LIST} element={<List />} />
           <Route path={PATHS.RESULT} element={<Result />}  />
+          <Route path='*' element={<ErrorPage />}/>
         </Routes>
       </Router>
     </ConfigProvider>
