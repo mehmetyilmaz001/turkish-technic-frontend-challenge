@@ -9,6 +9,12 @@ export const ALERT_TYPE = {
     SUCCESS: 'success'
 }
 
+/**
+ * Alert - A display component that renders fail | success state messages.
+ *
+ * @param {string} type
+ * @param {string} message
+ */
 export default function Alert({ type = ALERT_TYPE.SUCCESS, message, buttonProps }) {
     return (
         <div className={`alert ${type}`}>
