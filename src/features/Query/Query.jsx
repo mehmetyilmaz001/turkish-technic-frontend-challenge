@@ -20,7 +20,8 @@ const Query = () => {
         <MainLayout theme="dark">
             <div className='page-container'>
                 <h2> Merhaba <br />
-                    Nereyi keşfetmek istersiniz?</h2>
+                    <span style={{fontSize: 18}}>Nereyi keşfetmek istersiniz?</span>
+                </h2>
                 <QueryForm onFinish={onFinish} />
             </div>
         </MainLayout>);

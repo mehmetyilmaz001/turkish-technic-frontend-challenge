@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Turkish Technic Frontend Coding Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live demo: []()
 
 ## Available Scripts
 
