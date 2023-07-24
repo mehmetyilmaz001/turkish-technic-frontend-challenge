@@ -3,12 +3,19 @@ import MainLayout from '../../layouts/MainLayout/MainLayout'
 import useDetail from './hooks/useDetail';
 import { FlightsTable } from './components/FlightsTable/FlightsTable';
 import { Switch } from 'antd';
+import history from '../../utils/history';
+import { LOCAL_STORAGE_KEYS, PATHS } from '../../constants';
 
 import "./List.styles.scss";
 
 const List = () => {
     const [isPromoActive, setIsPromoActive] = useState(false);
     const [details, selectedFlight] = useDetail();
+
+    const onSelectionDone = subCategory => {
+        localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_SUB_CATEGORY, JSON.stringify({subCategory, selectedFlight}));
+        history.push(PATHS.RESULT);
+    }
 
     return (
         <MainLayout className="list-page">
@@ -27,7 +34,7 @@ const List = () => {
                         </span>
                     }
                 </div>
-                <FlightsTable data={details} isPromoActive={isPromoActive} />
+                <FlightsTable data={details} isPromoActive={isPromoActive} onSelectionDone={onSelectionDone} />
             </div>
         </MainLayout>
     );

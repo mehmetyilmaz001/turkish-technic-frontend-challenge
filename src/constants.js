@@ -4,7 +4,8 @@ export const CABIN_TYPE = {
 }
 
 export const LOCAL_STORAGE_KEYS = {
-    SELECTED_QUERY_VALUES: 'SELECTED_QUERY_VALUES'
+    SELECTED_QUERY_VALUES: 'SELECTED_QUERY_VALUES',
+    SELECTED_SUB_CATEGORY: 'SELECTED_SUB_CATEGORY'
 }
 
 export const PATHS = {
@@ -16,4 +17,9 @@ export const PATHS = {
 export const LIST_TABLE_SORT_BY = {
     ECONOMY_FARE: 'ECONOMY_FARE',
     TAKE_OF_TIME: 'TAKE_OF_TIME'
+}
+
+export const STATUS = {
+    AVAILABLE: 'AVAILABLE',
+    ERROR: 'ERROR'
 }

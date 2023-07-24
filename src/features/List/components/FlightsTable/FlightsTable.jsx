@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { Button } from 'antd';
 import { CustomTable } from '../../../../components/CustomTable/CustomTable';
 import FlightInfoCell from './components/FlightInfoCell/FlightInfoCell';
@@ -10,7 +10,7 @@ import useSort from './hooks/useSort';
 import "./FlightsTable.styles.scss";
 
 
-export function FlightsTable({ data, isPromoActive }) {
+export function FlightsTable({ data, isPromoActive, onSelectionDone }) {
     const [rowDetail, setRowDetail] = useState({
         row: null,
         rowIndex: -1
@@ -23,10 +23,10 @@ export function FlightsTable({ data, isPromoActive }) {
         setRowDetail({rowIndex, row: selectedFareCategories});
     }
 
-    const onSubCategorySelect = (subCategory) => {
-        console.log("son sub category select", subCategory);
+    const onSubCategorySelect = useCallback(subCategory => {
         setSelectedSubCategory(subCategory);
-    }
+        onSelectionDone(subCategory);
+    }, [onSelectionDone]);
 
     const cols = [
         {
@@ -53,7 +53,7 @@ export function FlightsTable({ data, isPromoActive }) {
                     isPromoActive={isPromoActive}
                     selectedSubCategory={selectedSubCategory}
                     onSubCategorySelect={onSubCategorySelect}  />
-    }), [isPromoActive, rowDetail.row, rowDetail?.rowIndex, selectedSubCategory]);
+    }), [isPromoActive, onSubCategorySelect, rowDetail.row, rowDetail?.rowIndex, selectedSubCategory]);
     
     const tableHeader = useMemo(() => 
             <>

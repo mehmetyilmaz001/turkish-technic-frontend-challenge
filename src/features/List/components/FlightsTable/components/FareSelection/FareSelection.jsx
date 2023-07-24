@@ -32,7 +32,7 @@ export default function FareSelection({row, rowIndex, prevRowIndex, onFareSelect
                 <Radio value={label}>{label}</Radio>
                 <div className="price">
                     <span className="title">Yolcu Başına</span>
-                    <span className="value">{amount} {row.fareCategories[label]?.subcategories[0].price.currency}</span>
+                    <span className="value">{row.fareCategories[label]?.subcategories[0]?.price?.currency} {amount}</span>
                 </div>
                 {selectedFare === label ? <UpOutlined /> : <DownOutlined />}
             </div>

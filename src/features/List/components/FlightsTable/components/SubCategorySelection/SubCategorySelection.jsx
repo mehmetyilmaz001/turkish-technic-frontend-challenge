@@ -10,7 +10,7 @@ export default function SubCategorySelection({ subCategories, onSubCategorySelec
                 key={i.brandCode}
                 selectedSubCategory={selectedSubCategory}
                 subCategory={i}
-                onSelect={() => onSubCategorySelect(i)}
+                onSelect={onSubCategorySelect}
                 isPromoActive={isPromoActive}
             />
             )}

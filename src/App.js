@@ -1,12 +1,12 @@
 import React from 'react';
 import { Router, Routes, Route } from "react-router-dom";
 import { ConfigProvider } from 'antd';
-import { Query, List } from './features';
+import { Query, List, Result } from './features';
 import locale from 'antd/es/locale/en_US';
 import history from './utils/history';
+import { PATHS } from './constants';
 
 import './assets/styles/app.scss';
-import { PATHS } from './constants';
 
 function App() {
 
@@ -28,6 +28,7 @@ function App() {
         <Routes>
           <Route index element={<Query />} />
           <Route path={PATHS.LIST} element={<List />} />
+          <Route path={PATHS.RESULT} element={<Result />}  />
         </Routes>
       </Router>
     </ConfigProvider>
