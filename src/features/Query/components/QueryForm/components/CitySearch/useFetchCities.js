@@ -1,17 +1,40 @@
-const cityList = [
-    {
-        value: 'AYT',
-        label: 'Antalya'
-    },
-    {
-        value: 'IST',
-        label: 'Istanbul'
+import flightsData from '../../../../../../flights.json';
+
+/**
+ * createAirportList - Creates uniq list by airport code
+ * returns - {array} - airport list
+ */
+const createAirportList = () => {
+  const seen = {};
+  const list = [];
+
+  for(const item of flightsData.flights){
+    const airportInOrigin = item.originAirport;
+    const airportInDestination = item.destinationAirport;
+    
+    if(airportInOrigin.code in seen){
+      continue;
+    }else{
+      list.push(airportInOrigin);
     }
-];
+
+    if(airportInDestination.code in seen){
+      continue;
+    }else{
+      list.push(airportInDestination)
+    }
+
+    seen[airportInOrigin.code] = airportInOrigin;
+    seen[airportInDestination.code] = airportInOrigin;
+  }
+
+  return list;
+}
 
 const useFetchCities = () => {
     async function fetchCityList(city) {
         if (city.length <= 1) return [];
+        const cityList = createAirportList().map(i => ({label: i.name, value: i.code}));
 
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -23,7 +46,7 @@ const useFetchCities = () => {
               } else {
                 reject('City not found!');
               }
-            }, 1000);
+            }, 200);
           });
     }
 

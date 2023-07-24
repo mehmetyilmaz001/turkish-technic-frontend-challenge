@@ -1,57 +1,29 @@
 @import "../../assets/styles/vars/colors.scss";
 
 .result-page {
-
-    .result {
+    article {
         display: flex;
         flex-direction: column;
-        min-width: 600px;
-        gap: 20px;
+        gap: 16px;
 
-        &.failed {
-            .icon-message-container {
-                .icon {
-                    color: $accent-color;
-                }
-            }
-        }
-
-        .icon-message-container {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            border-bottom: solid 1px $border-color;
-            padding-bottom: 20px;
-
-            .icon {
-                color: $success-color;
-                font-size: 20px;
-            }
-
-            .message {
-                font-weight: 800;
-            }
-
-            
-        }
-
-        .total-amount{
+        .total-amount {
             display: flex;
             justify-content: space-between;
+            width: 100%;
 
-            .title{
+            .title {
                 font-size: 25px;
                 color: $text-color-2;
             }
 
-            .amount{
+            .amount {
                 font-size: 25px;
                 color: $text-color-3;
                 font-weight: 800;
             }
         }
 
-        .btn-back{
+        .btn-back {
             width: 120px;
             align-self: flex-end;
         }
