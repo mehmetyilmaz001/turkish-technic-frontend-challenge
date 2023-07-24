@@ -5,6 +5,8 @@ import FlightInfoCell from './components/FlightInfoCell/FlightInfoCell';
 import FareSelection from './components/FareSelection/FareSelection';
 import SubCategorySelection from './components/SubCategorySelection/SubCategorySelection';
 
+import "./FlightsTable.styles.scss";
+
 
 export function FlightsTable({ data }) {
     const [rowDetail, setRowDetail] = useState({
@@ -43,10 +45,10 @@ export function FlightsTable({ data }) {
                     onSubCategorySelect={onSubCategorySelect}  />
     }), [rowDetail.row, rowDetail?.rowIndex]);
     
-    const tableHeader = useMemo(() => <>Sıralama Kriteri <Button>Ekonomi Ücreti</Button> <Button>Kalkış Saati</Button></>, []);
+    const tableHeader = useMemo(() => <>Sıralama Kriteri <Button ghost>Ekonomi Ücreti</Button> <Button ghost>Kalkış Saati</Button></>, []);
 
     return (
-        <div className='flight-table'>
+        <div className='flights-table'>
             <CustomTable
                 header={tableHeader}
                 data={data}

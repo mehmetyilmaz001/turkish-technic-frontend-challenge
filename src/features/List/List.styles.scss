@@ -1,0 +1,30 @@
+@import "../../assets/styles/vars/colors.scss";
+
+.list-page {
+    .page-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .mini-title {
+            min-width: 100px;
+            height: 25px;
+            line-height: 25px;
+            background-color: $accent-color;
+            color: white;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .summary-title {
+            margin: 0;
+            padding: 0;
+            color: $text-color-2;
+            font-weight: normal;
+        }
+
+        .flights-table {
+            margin-top: 30px
+        }
+    }
+}

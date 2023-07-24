@@ -5,7 +5,7 @@ import "./SubCategorySelection.styles.scss";
 export default function SubCategorySelection({subCategories, onSubCategorySelect}){
     return (
         <div className="sub-category-selection card">
-            {subCategories?.map(i => <SubCategoryCard subCategory={i} onSelect={() => onSubCategorySelect(i)} />)}
+            {subCategories?.map(i => <SubCategoryCard key={i.brandCode} subCategory={i} onSelect={() => onSubCategorySelect(i)} />)}
         </div>
     )
 }
@@ -21,7 +21,7 @@ const SubCategoryCard = ({subCategory, onSelect}) => {
                 </span>
             </div>
             <div className="body">
-                <ul>{subCategory.rights.map(i => <li>{i}</li>)}</ul>
+                <ul>{subCategory.rights.map(i => <li key={i}>{i}</li>)}</ul>
             </div>
             <button className="footer" onClick={onSelect}>Uçuşu Seç</button>
         </div>

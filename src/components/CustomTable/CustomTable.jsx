@@ -7,11 +7,11 @@ export function CustomTable({ header, data, keyProp, cols, rowDetail }) {
     return (
         
         <div className="custom-table">
-            <div className="header">
+            <div className="table-header">
                 {header}
             </div>
 
-            <div className="body">
+            <div className="table-body">
                 {data.map((row, index) =>
                     <TableRow key={row[keyProp]}>
                         <div className="cell-container">
