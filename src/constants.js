@@ -12,3 +12,8 @@ export const PATHS = {
     LIST: '/list',
     RESULT: '/result',
 }
+
+export const LIST_TABLE_SORT_BY = {
+    ECONOMY_FARE: 'ECONOMY_FARE',
+    TAKE_OF_TIME: 'TAKE_OF_TIME'
+}
