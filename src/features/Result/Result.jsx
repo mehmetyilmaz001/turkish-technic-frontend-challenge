@@ -1,13 +1,21 @@
+import React from 'react';
 import { LOCAL_STORAGE_KEYS, PATHS, STATUS } from "../../constants";
 import MainLayout from "../../layouts/MainLayout/MainLayout";
 import history from '../../utils/history';
-
-import "./Result.styles.scss";
 import Alert, { ALERT_TYPE } from '../../components/Alert/Alert';
 
+import "./Result.styles.scss";
+
+/**
+ * Result Component - The main page|feature component for displaying the success or fail resul.
+ *
+ * @returns {JSX.Element}
+ */
 export default function Result(){
     const resultData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_SUB_CATEGORY));
-    const hasFailed = resultData.subCategory.status === STATUS.ERROR
+    const hasFailed = resultData?.subCategory?.status === STATUS.ERROR;
+
+    console.log("result data", resultData);
 
     return (
         <MainLayout className="result-page">

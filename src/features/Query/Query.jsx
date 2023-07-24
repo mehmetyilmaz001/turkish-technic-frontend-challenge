@@ -7,7 +7,7 @@ import history from '../../utils/history';
 /**
  * Query Component - The main page|feature component for query the flights of the selected paramaters
  *
- * @returns {JSX.Element} - A number input spinner with increment and decrement buttons.
+ * @returns {JSX.Element}
  */
 const Query = () => {
     const onFinish = useCallback((values) => {

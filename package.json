@@ -52,6 +52,10 @@
     },
     "transformIgnorePatterns": [
       "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
-    ]
+    ],
+    "resetMocks": false
+  },
+  "devDependencies": {
+    "jest-localstorage-mock": "^2.4.26"
   }
 }
