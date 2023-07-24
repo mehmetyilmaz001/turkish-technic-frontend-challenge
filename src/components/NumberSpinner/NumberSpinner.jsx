@@ -4,6 +4,16 @@ import { PlusOutlined, MinusOutlined } from '@ant-design/icons';
 
 import './NumberSpinner.styles.scss';
 
+/**
+ * NumberSpinner Component - A customizable number input spinner.
+ *
+ * @param {number} min - The minimum allowed value (default: 0).
+ * @param {number} max - The maximum allowed value.
+ * @param {number} step - The step value for increment and decrement (default: 1).
+ * @param {function} onChange - Callback function triggered when the value changes.
+ * @param {number} value - The current value of the spinner.
+ * @returns {JSX.Element} - A number input spinner with increment and decrement buttons.
+ */
 export default function NumberSpinner({min = 0, max, step = 1, onChange, value}){
     const [val, setValue] = useState(value || min);
 
