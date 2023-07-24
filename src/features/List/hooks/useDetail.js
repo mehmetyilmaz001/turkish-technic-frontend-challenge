@@ -7,9 +7,9 @@ export default function useDetail(){
 
     const details = useMemo(() => 
         fligths.flights.filter(f => 
-                f.originAirport.code === selectedFlight.origin 
-                && f.destinationAirport.code === selectedFlight.dest), 
-    [selectedFlight.dest, selectedFlight.origin]);
+                f.originAirport?.code === selectedFlight?.origin 
+                && f.destinationAirport?.code === selectedFlight?.dest), 
+    [selectedFlight?.dest, selectedFlight?.origin]);
 
    
 

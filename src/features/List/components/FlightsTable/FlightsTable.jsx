@@ -9,7 +9,11 @@ import useSort from './hooks/useSort';
 
 import "./FlightsTable.styles.scss";
 
-
+/**
+ * FlightsTable Component - The component for listing the flights and choosing the sub category.
+ *
+ * @returns {JSX.Element}
+ */
 export function FlightsTable({ data, isPromoActive, onSelectionDone }) {
     const [rowDetail, setRowDetail] = useState({
         row: null,

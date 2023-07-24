@@ -9,6 +9,11 @@ import Alert, { ALERT_TYPE } from '../../components/Alert/Alert';
 
 import "./List.styles.scss";
 
+/**
+ * List Component - The main page|feature component for listing the available flights
+ *
+ * @returns {JSX.Element}
+ */
 const List = () => {
     const [isPromoActive, setIsPromoActive] = useState(false);
     const [details, selectedFlight] = useDetail();
@@ -35,7 +40,7 @@ const List = () => {
                         {selectedFlight?.cabinAndPassenger?.passenger} Yolcu
                     </h2>
                     <div className="promo-switch">
-                        <div className="swith-item"><strong>Promosyon Kodu</strong> <Switch onChange={setIsPromoActive} /></div>
+                        <div className="swith-item"><strong>Promosyon Kodu</strong> <Switch onChange={setIsPromoActive} data-testid="switch" /></div>
                         {isPromoActive &&
                             <span className="promo-info">
                                 Promosyon Kodu seçeneği ile tüm Economy kabini Eco Fly paketlerini %50 indirimle satın alabilirsiniz! <br />

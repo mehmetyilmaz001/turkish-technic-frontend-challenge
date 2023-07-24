@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Radio } from 'antd';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import { CABIN_TYPE } from '../../../../../../constants';

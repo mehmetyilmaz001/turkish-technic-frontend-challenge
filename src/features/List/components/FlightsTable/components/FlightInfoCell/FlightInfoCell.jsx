@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './FlightInfoCell.styles.scss';
 
 export default function FlightInfoCell({row}){

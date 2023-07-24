@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 import { upperFirst } from "../../../../../../utils/functions";
 
 import "./SubCategorySelection.styles.scss";
