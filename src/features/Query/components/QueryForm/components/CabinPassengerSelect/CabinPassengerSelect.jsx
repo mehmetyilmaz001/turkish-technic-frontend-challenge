@@ -45,7 +45,7 @@ export default function CabinPassengerSelect({value, onChange, label}){
 
     return (
         <Popover content={content} title={label} trigger="click">
-            <button className="cabin-passenger-select-button" type="button">
+            <button className="cabin-passenger-select-button" type="button" data-testid="btn-cabin">
                 <div className="icon">{renderIcon}</div>
                 <div className="passenger-count">{val?.passenger}</div>
             </button>

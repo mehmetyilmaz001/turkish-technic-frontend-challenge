@@ -5,9 +5,9 @@ import { FlightsTable } from './components/FlightsTable/FlightsTable';
 import { Switch } from 'antd';
 import history from '../../utils/history';
 import { LOCAL_STORAGE_KEYS, PATHS } from '../../constants';
+import Alert, { ALERT_TYPE } from '../../components/Alert/Alert';
 
 import "./List.styles.scss";
-import Alert, { ALERT_TYPE } from '../../components/Alert/Alert';
 
 const List = () => {
     const [isPromoActive, setIsPromoActive] = useState(false);
@@ -17,8 +17,6 @@ const List = () => {
         localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_SUB_CATEGORY, JSON.stringify({ subCategory, selectedFlight }));
         history.push(PATHS.RESULT);
     }
-
-    console.log("selected flight", details);
 
     return (
         <MainLayout className="list-page">

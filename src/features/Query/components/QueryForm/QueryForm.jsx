@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Button, Modal } from 'antd';
 import { RightOutlined } from '@ant-design/icons';
 import CitySearch from './components/CitySearch/CitySearch';
-import IconOrigin from '../../../../assets/images/icon-origin.png';
+import IconOrigin from '../../../../assets/images/icon-origin.svg';
 import IconDestination from '../../../../assets/images/icon-destination.svg';
 import CabinPassengerSelect from './components/CabinPassengerSelect/CabinPassengerSelect';
 import DatePicker from './components/DatePicker/DatePicker';
@@ -57,14 +57,14 @@ export default function QueryForm({onFinish}) {
                 name="origin"
                 rules={[{ required: true }]}
             >
-                <CitySearch placeholder="Nereden" onFail={error} suffixIcon={<img src={IconOrigin} alt='origin' />} />
+                <CitySearch data-testid="input-origin" placeholder="Nereden" onFail={error} suffixIcon={<img src={IconOrigin} alt='origin' />} />
             </Form.Item>
 
             <Form.Item
                 name="dest"
                 rules={[{ required: true }]}
             >
-                <CitySearch placeholder="Nereye" onFail={error} suffixIcon={<img src={IconDestination} alt='origin' />} />
+                <CitySearch data-testid="input-dest" placeholder="Nereye" onFail={error} suffixIcon={<img src={IconDestination} alt='origin' />} />
             </Form.Item>
             <DatePicker label="Tarih" />
             <Form.Item
@@ -73,7 +73,7 @@ export default function QueryForm({onFinish}) {
             >
                 <CabinPassengerSelect label="Kabin ve Yolcu Seçimi" />
             </Form.Item>
-            <Button type="primary" htmlType="submit" size='large' disabled={!submittable}>
+            <Button type="primary" htmlType="submit" size='large' disabled={!submittable} data-testid="btn-submit">
                 <RightOutlined />
             </Button>
         </Form>

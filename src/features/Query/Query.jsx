@@ -4,6 +4,11 @@ import QueryForm from './components/QueryForm/QueryForm';
 import { LOCAL_STORAGE_KEYS, PATHS } from '../../constants';
 import history from '../../utils/history';
 
+/**
+ * Query Component - The main page|feature component for query the flights of the selected paramaters
+ *
+ * @returns {JSX.Element} - A number input spinner with increment and decrement buttons.
+ */
 const Query = () => {
     const onFinish = useCallback((values) => {
         localStorage.setItem(LOCAL_STORAGE_KEYS.SELECTED_QUERY_VALUES, JSON.stringify(values));
