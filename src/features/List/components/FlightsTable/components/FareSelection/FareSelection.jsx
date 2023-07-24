@@ -10,8 +10,9 @@ export default function FareSelection({row, rowIndex, prevRowIndex, onFareSelect
 
     const onChangeFlare = useCallback((val) => {
         setSelectedFare(val);
-        onFareSelect(rowIndex, row?.fareCategories[selectedFare]?.subcategories);
-    }, [onFareSelect, row?.fareCategories, rowIndex, selectedFare]);
+        onFareSelect(rowIndex, row?.fareCategories[val]?.subcategories);
+
+    }, [onFareSelect, row?.fareCategories, rowIndex]);
 
 
     useEffect(() => {

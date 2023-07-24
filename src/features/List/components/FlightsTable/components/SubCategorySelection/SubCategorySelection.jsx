@@ -1,4 +1,5 @@
 import { upperFirst } from "../../../../../../utils/functions";
+
 import "./SubCategorySelection.styles.scss";
 
 export default function SubCategorySelection({subCategories, onSubCategorySelect}){
