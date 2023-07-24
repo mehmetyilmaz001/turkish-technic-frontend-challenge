@@ -1,9 +1,12 @@
+@import './vars/colors.scss';
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 html, body, #root{
     font-family: Arial, Helvetica, sans-serif;
+    color: $text-color;
     height: 100%;
     padding: 0;
     margin: 0;
@@ -18,4 +21,21 @@ html, body, #root{
         text-align: center;
         font-weight: normal;
     }
+}
+
+.align-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.column{
+        flex-direction: column;
+    }
+}
+
+.card{
+    min-height: 100px;
+    background-color: white;
+    box-shadow: 4px 6px 10px 0px #dedede;
+    padding: 16px;
 }

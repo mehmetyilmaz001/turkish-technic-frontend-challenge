@@ -1,6 +1,6 @@
 export default function TableRow({children}){
     return(
-        <div className='table-row'>
+        <div className="table-row" style={{display: "flex", flexDirection: 'column'}}>
             {children}
         </div>
     )

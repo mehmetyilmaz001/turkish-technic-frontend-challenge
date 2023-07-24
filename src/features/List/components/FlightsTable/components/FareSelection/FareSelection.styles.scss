@@ -1,0 +1,46 @@
+@import '../../../../../../assets/styles/vars/colors.scss';
+
+.fare-selection{
+
+    .card{
+        cursor: pointer;
+
+        &.selected{
+            box-shadow: none;
+        }
+    }
+    
+    .ant-radio-group{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        :where(.css-dev-only-do-not-override-1xtg7tr).ant-radio-wrapper span.ant-radio+* {
+            font-size: 10px;
+            color: $text-color-2;
+        }
+
+
+        .price{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+
+            .title{
+                color: $text-color-2;
+                font-size: 11px;
+            }
+
+            .value{
+                font-weight: 800;
+            }
+        }
+
+        .anticon{
+            font-size: 12px;
+            margin-left: 20px;
+        }
+    }
+}
