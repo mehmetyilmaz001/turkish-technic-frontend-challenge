@@ -15,8 +15,6 @@ export default function Result(){
     const resultData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_SUB_CATEGORY));
     const hasFailed = resultData?.subCategory?.status === STATUS.ERROR;
 
-    console.log("result data", resultData);
-
     return (
         <MainLayout className="result-page">
 
