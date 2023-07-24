@@ -3,7 +3,7 @@
 ## Live demo: [https://turkish-technic-frontend-challenge.vercel.app/](https://turkish-technic-frontend-challenge.vercel.app/)
 
 
-## Screen Shots: 
+## Screenshots: 
 ![Preview](https://raw.githubusercontent.com/mehmetyilmaz001/turkish-technic-frontend-challenge/main/.github/1.png)
 
 ![Preview](https://raw.githubusercontent.com/mehmetyilmaz001/turkish-technic-frontend-challenge/main/.github/2.png)
