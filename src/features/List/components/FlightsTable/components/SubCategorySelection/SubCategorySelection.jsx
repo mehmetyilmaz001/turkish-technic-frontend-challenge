@@ -3,29 +3,31 @@ import { upperFirst } from "../../../../../../utils/functions";
 
 import "./SubCategorySelection.styles.scss";
 
-export default function SubCategorySelection({subCategories, onSubCategorySelect, selectedSubCategory}){
+export default function SubCategorySelection({ subCategories, onSubCategorySelect, selectedSubCategory, isPromoActive }) {
     return (
         <div className="sub-category-selection card">
-            {subCategories?.map(i => <SubCategoryCard 
-                                        key={i.brandCode} 
-                                        selectedSubCategory={selectedSubCategory} 
-                                        subCategory={i} 
-                                        onSelect={() => onSubCategorySelect(i)} />
+            {subCategories?.map(i => <SubCategoryCard
+                key={i.brandCode}
+                selectedSubCategory={selectedSubCategory}
+                subCategory={i}
+                onSelect={() => onSubCategorySelect(i)}
+                isPromoActive={isPromoActive}
+            />
             )}
         </div>
     )
 }
 
-const SubCategoryCard = ({subCategory, onSelect, selectedSubCategory}) => {
+const SubCategoryCard = ({ subCategory, onSelect, selectedSubCategory, isPromoActive }) => {
     const buttonSelectedClassName = useMemo(() => {
         const selectedClassName = "selected";
-       
-        if(!selectedSubCategory || (selectedSubCategory === subCategory)){
+
+        if (!selectedSubCategory || (selectedSubCategory === subCategory)) {
             return selectedClassName;
         }
 
         return '';
-        
+
     }, [selectedSubCategory, subCategory]);
 
     return (
@@ -40,7 +42,12 @@ const SubCategoryCard = ({subCategory, onSelect, selectedSubCategory}) => {
             <div className="body">
                 <ul>{subCategory.rights.map(i => <li key={i}>{i}</li>)}</ul>
             </div>
-            <button className={`footer-button ${buttonSelectedClassName}`} onClick={onSelect}>Uçuşu Seç</button>
+            <button 
+                className={`footer-button ${buttonSelectedClassName}`} 
+                onClick={onSelect} 
+                disabled={isPromoActive && subCategory.brandCode !== 'ecoFly'}>
+                    Uçuşu Seç
+                </button>
         </div>
     )
 }

@@ -51,13 +51,14 @@
             justify-content: center;
             height: 50px;
             border: none;
-            background-color: $disabled-button-color;
-            color: $disabled-button-text-color;
+            
+            color: white;
+            background-color: $accent-color;
             cursor: pointer;
             
-            &.selected{
-                color: white;
-                background-color: $accent-color;
+            &[disabled]{
+                background-color: $disabled-button-color;
+                color: $disabled-button-text-color;
             }
         }
     }

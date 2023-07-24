@@ -10,7 +10,7 @@ import useSort from './hooks/useSort';
 import "./FlightsTable.styles.scss";
 
 
-export function FlightsTable({ data }) {
+export function FlightsTable({ data, isPromoActive }) {
     const [rowDetail, setRowDetail] = useState({
         row: null,
         rowIndex: -1
@@ -48,9 +48,10 @@ export function FlightsTable({ data }) {
         rowIndex: rowDetail?.rowIndex,
         content: <SubCategorySelection 
                     subCategories={rowDetail.row}
+                    isPromoActive={isPromoActive}
                     selectedSubCategory={selectedSubCategory}
                     onSubCategorySelect={onSubCategorySelect}  />
-    }), [rowDetail.row, rowDetail?.rowIndex, selectedSubCategory]);
+    }), [isPromoActive, rowDetail.row, rowDetail?.rowIndex, selectedSubCategory]);
     
     const tableHeader = useMemo(() => 
             <>

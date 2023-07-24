@@ -23,6 +23,14 @@
             font-weight: normal;
         }
 
+        .promo-switch{
+            margin-top: 40px;
+            .promo-info{
+                line-height: 25px;
+                color: $text-color-2;
+            }
+        }
+
         .flights-table {
             margin-top: 30px
         }
