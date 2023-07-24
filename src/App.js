@@ -19,7 +19,7 @@ function App() {
   React.useLayoutEffect(() => history.listen(setState), [history])
 
   return (
-    <ConfigProvider theme={{ token: { colorPrimary: '#d32e34', borderRadius: 0 } }} locale={locale}>
+    <ConfigProvider theme={{ token: { colorPrimary: '#E81932', borderRadius: 0 } }} locale={locale}>
       <Router basename="/"
         navigator={history}
         location={state.location}
