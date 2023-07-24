@@ -1,8 +1,13 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { LIST_TABLE_SORT_BY } from '../../../../../constants';
 
 export default function useSort(data){
     const [tableData, setTableData] = useState(data);
+
+    useEffect(() => {
+        onSort(LIST_TABLE_SORT_BY.ECONOMY_FARE);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const onSort = useCallback((sortBy) => {
         const sortedData = [...tableData.sort((a, b) => {

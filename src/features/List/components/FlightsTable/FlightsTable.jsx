@@ -40,7 +40,9 @@ export function FlightsTable({ data, isPromoActive }) {
                                             rowIndex={rowIndex} 
                                             prevRowIndex={rowDetail.rowIndex} 
                                             row={row} 
-                                            onFareSelect={onFareSelect} /> 
+                                            onFareSelect={onFareSelect}
+                                            isPromoActive={isPromoActive}
+                                            /> 
         },
     ];
     

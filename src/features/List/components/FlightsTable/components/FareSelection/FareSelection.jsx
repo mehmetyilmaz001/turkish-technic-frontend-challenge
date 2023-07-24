@@ -5,7 +5,7 @@ import { CABIN_TYPE } from '../../../../../../constants';
 
 import "./FareSelection.styles.scss";
 
-export default function FareSelection({row, rowIndex, prevRowIndex, onFareSelect}){
+export default function FareSelection({row, rowIndex, prevRowIndex, onFareSelect, isPromoActive}){
     const [selectedFare, setSelectedFare] = useState(null);
 
     const onChangeFlare = useCallback((val) => {
@@ -23,17 +23,21 @@ export default function FareSelection({row, rowIndex, prevRowIndex, onFareSelect
     }, [prevRowIndex, rowIndex]);
     
     const renderCard = useCallback((label) => {
+        
+        const rawAmount = row?.fareCategories[label]?.subcategories[0]?.price.amount;
+        const amount = isPromoActive && label === 'ECONOMY' ? rawAmount / 2 : rawAmount; 
+        
         return (
             <div key={label} className={`card align-center ${selectedFare === label ? 'selected':''}`} onClick={() => onChangeFlare(label)}>
                 <Radio value={label}>{label}</Radio>
                 <div className="price">
                     <span className="title">Yolcu Başına</span>
-                    <span className="value">{row?.fareCategories[label]?.subcategories[0]?.price.amount} {row.fareCategories[label]?.subcategories[0].price.currency}</span>
+                    <span className="value">{amount} {row.fareCategories[label]?.subcategories[0].price.currency}</span>
                 </div>
                 {selectedFare === label ? <UpOutlined /> : <DownOutlined />}
             </div>
         )
-    }, [onChangeFlare, row.fareCategories, selectedFare])
+    }, [isPromoActive, onChangeFlare, row.fareCategories, selectedFare])
 
     return (
         <div className="fare-selection">

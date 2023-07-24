@@ -30,13 +30,15 @@ const SubCategoryCard = ({ subCategory, onSelect, selectedSubCategory, isPromoAc
 
     }, [selectedSubCategory, subCategory]);
 
+    const amount = isPromoActive && subCategory.brandCode === 'ecoFly' ? subCategory.price.amount / 2 : subCategory.price.amount;
+
     return (
         <div className="sub-category-card">
             <div className="header">
                 <span className="title">{upperFirst(subCategory.brandCode)}</span>
                 <span className="price">
                     <span className="currency">{subCategory.price.currency}</span>
-                    <span className="amoun">{subCategory.price.amount}</span>
+                    <span className="amoun">{amount}</span>
                 </span>
             </div>
             <div className="body">
@@ -44,7 +46,7 @@ const SubCategoryCard = ({ subCategory, onSelect, selectedSubCategory, isPromoAc
             </div>
             <button 
                 className={`footer-button ${buttonSelectedClassName}`} 
-                onClick={onSelect} 
+                onClick={() => onSelect({...subCategory, price: {...subCategory.price, amount}})} 
                 disabled={isPromoActive && subCategory.brandCode !== 'ecoFly'}>
                     Uçuşu Seç
                 </button>

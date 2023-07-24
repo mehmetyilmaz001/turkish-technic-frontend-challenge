@@ -59,6 +59,7 @@
             &[disabled]{
                 background-color: $disabled-button-color;
                 color: $disabled-button-text-color;
+                cursor: not-allowed;
             }
         }
     }
