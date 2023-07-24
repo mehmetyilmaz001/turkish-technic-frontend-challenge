@@ -1,16 +1,33 @@
+import { useMemo } from "react";
 import { upperFirst } from "../../../../../../utils/functions";
 
 import "./SubCategorySelection.styles.scss";
 
-export default function SubCategorySelection({subCategories, onSubCategorySelect}){
+export default function SubCategorySelection({subCategories, onSubCategorySelect, selectedSubCategory}){
     return (
         <div className="sub-category-selection card">
-            {subCategories?.map(i => <SubCategoryCard key={i.brandCode} subCategory={i} onSelect={() => onSubCategorySelect(i)} />)}
+            {subCategories?.map(i => <SubCategoryCard 
+                                        key={i.brandCode} 
+                                        selectedSubCategory={selectedSubCategory} 
+                                        subCategory={i} 
+                                        onSelect={() => onSubCategorySelect(i)} />
+            )}
         </div>
     )
 }
 
-const SubCategoryCard = ({subCategory, onSelect}) => {
+const SubCategoryCard = ({subCategory, onSelect, selectedSubCategory}) => {
+    const buttonSelectedClassName = useMemo(() => {
+        const selectedClassName = "selected";
+       
+        if(!selectedSubCategory || (selectedSubCategory === subCategory)){
+            return selectedClassName;
+        }
+
+        return '';
+        
+    }, [selectedSubCategory, subCategory]);
+
     return (
         <div className="sub-category-card">
             <div className="header">
@@ -23,7 +40,7 @@ const SubCategoryCard = ({subCategory, onSelect}) => {
             <div className="body">
                 <ul>{subCategory.rights.map(i => <li key={i}>{i}</li>)}</ul>
             </div>
-            <button className="footer" onClick={onSelect}>Uçuşu Seç</button>
+            <button className={`footer-button ${buttonSelectedClassName}`} onClick={onSelect}>Uçuşu Seç</button>
         </div>
     )
 }

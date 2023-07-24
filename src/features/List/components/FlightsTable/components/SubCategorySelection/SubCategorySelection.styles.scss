@@ -45,15 +45,20 @@
             }
             
         }
-        .footer{
+        .footer-button{
             display: flex;
             align-items: center;
             justify-content: center;
             height: 50px;
             border: none;
-            background-color: $accent-color;
-            color: white;
+            background-color: $disabled-button-color;
+            color: $disabled-button-text-color;
             cursor: pointer;
+            
+            &.selected{
+                color: white;
+                background-color: $accent-color;
+            }
         }
     }
 }

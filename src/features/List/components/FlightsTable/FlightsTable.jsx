@@ -11,11 +11,11 @@ import "./FlightsTable.styles.scss";
 
 
 export function FlightsTable({ data }) {
-    // const [tableData, setTableData] = useState(data);
     const [rowDetail, setRowDetail] = useState({
         row: null,
         rowIndex: -1
     });
+    const [selectedSubCategory, setSelectedSubCategory] = useState(null);
 
     const [onTableSort, tableData] = useSort(data);
 
@@ -25,6 +25,7 @@ export function FlightsTable({ data }) {
 
     const onSubCategorySelect = (subCategory) => {
         console.log("son sub category select", subCategory);
+        setSelectedSubCategory(subCategory);
     }
 
     const cols = [
@@ -46,9 +47,10 @@ export function FlightsTable({ data }) {
     const renderRowDetail = useMemo( () => ({
         rowIndex: rowDetail?.rowIndex,
         content: <SubCategorySelection 
-                    subCategories={rowDetail.row} 
+                    subCategories={rowDetail.row}
+                    selectedSubCategory={selectedSubCategory}
                     onSubCategorySelect={onSubCategorySelect}  />
-    }), [rowDetail.row, rowDetail?.rowIndex]);
+    }), [rowDetail.row, rowDetail?.rowIndex, selectedSubCategory]);
     
     const tableHeader = useMemo(() => 
             <>
