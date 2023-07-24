@@ -6,12 +6,14 @@ import IconOrigin from '../../../../assets/images/icon-origin.png';
 import IconDestination from '../../../../assets/images/icon-destination.svg';
 import CabinPassengerSelect from './components/CabinPassengerSelect/CabinPassengerSelect';
 import DatePicker from './components/DatePicker/DatePicker';
+import useSelectedFlight from './hooks/useSelectedFlight';
 
 import './QueryForm.styles.scss';
 
 export default function QueryForm({onFinish}) {
     const [form] = Form.useForm();
     const [submittable, setSubmittable] = useState(false);
+    const selectedFlight = useSelectedFlight();
     
     // Watch all values
     const values = Form.useWatch([], form);
@@ -31,7 +33,7 @@ export default function QueryForm({onFinish}) {
     const error = () => {
         Modal.error({
             title: 'Hata',
-            content: 'Şehir Bulunamadı!',
+            content: 'Hava alanı Bulunamadı!',
         });
     };
 
@@ -42,11 +44,13 @@ export default function QueryForm({onFinish}) {
             onFinish={onFinish}
             layout='vertical'
             form={form}
-            initialValues={{
+            initialValues={selectedFlight || {
                 cabinAndPassenger: {
                     cabin: 0,
                     passenger: 1
                 },
+                dest: null,
+                origin: null
             }}
         >
             <Form.Item

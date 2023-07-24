@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import fligths from '../../../flights.json';
-import { LOCAL_STORAGE_KEYS } from '../../../constants';
+import useSelectedFlight from '../../Query/components/QueryForm/hooks/useSelectedFlight';
 
 export default function useDetail(){
-    const selectedFlight = useMemo(() => JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.SELECTED_QUERY_VALUES)), []);
+    const selectedFlight = useSelectedFlight();
     
     const details = useMemo(() => 
         fligths.flights.filter(f => 
